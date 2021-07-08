@@ -2,7 +2,7 @@
 
 <button nbButton outline status="danger" (click)="newGame()">New Game</button>
 
-<div class="alert-wrap" *ngIf="winner">
+<div class="alert-wrap wrap" *ngIf="winner">
     <nb-alert status="success" closable *ngIf="winner=='X'" (close)="onClose()">
         Player {{winner}} won the game!
     </nb-alert>
@@ -10,6 +10,8 @@
         Player {{winner}} won the game!
     </nb-alert>
 </div>
+
+<div class="wrap" *ngIf="loader"></div>
 
 <main>
     <app-square 

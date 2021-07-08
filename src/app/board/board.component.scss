@@ -13,7 +13,7 @@ button {
     margin-bottom: 1rem;
 }
 
-.alert-wrap {
+.alert-wrap, .wrap {
     position: fixed;
     width: 100%;
     left: 0;
@@ -26,4 +26,8 @@ button {
     background-color: rgba(0,0,0,0.4);
     justify-content: center;
     grid-template-columns: 50%;
+}
+
+.wrap {
+    background-color: rgba(0,0,0,0.1);
 }
