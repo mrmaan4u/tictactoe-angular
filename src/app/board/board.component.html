@@ -1,0 +1,20 @@
+<h1>Current Player: {{player}}</h1>
+
+<button nbButton outline status="danger" (click)="newGame()">New Game</button>
+
+<div class="alert-wrap" *ngIf="winner">
+    <nb-alert status="success" closable *ngIf="winner=='X'" (close)="onClose()">
+        Player {{winner}} won the game!
+    </nb-alert>
+    <nb-alert status="info" closable *ngIf="winner=='O'" (close)="onClose()">
+        Player {{winner}} won the game!
+    </nb-alert>
+</div>
+
+<main>
+    <app-square 
+        *ngFor="let square of squares; let i = index"
+        [value]="square"
+        (click)="makeMove(i)">
+    </app-square>
+</main>

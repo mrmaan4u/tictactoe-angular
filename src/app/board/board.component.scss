@@ -1,0 +1,29 @@
+main {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-gap: 0px;
+}
+  
+app-square {
+    border: 1px gray solid;
+    height: 100px;
+}
+
+button {
+    margin-bottom: 1rem;
+}
+
+.alert-wrap {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+    display: grid;
+    align-items: center;
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+    grid-template-columns: 50%;
+}
