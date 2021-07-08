@@ -1,4 +1,10 @@
 <h1>Current Player: {{player}}</h1>
+<h4>Select Mode
+<nb-radio-group [(value)]="playerMode" (valueChange)="updateMode()">
+    <nb-radio value="1">1 Player</nb-radio>
+    <nb-radio value="2">2 Player</nb-radio>
+</nb-radio-group>
+</h4>
 
 <button nbButton outline status="danger" (click)="newGame()">New Game</button>
 

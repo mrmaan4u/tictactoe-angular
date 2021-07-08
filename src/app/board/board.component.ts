@@ -11,6 +11,7 @@ export class BoardComponent implements OnInit {
   winner!: string;
   combos!: any[];
   loader: boolean = false;
+  playerMode: string = '1';
 
   constructor() { }
 
@@ -34,6 +35,10 @@ export class BoardComponent implements OnInit {
     this.winner = '';
   }
 
+  updateMode() {
+    this.newGame();
+  }
+
   get player() {
     return this.xIsNext ? 'X' : 'O';
   }
@@ -43,10 +48,15 @@ export class BoardComponent implements OnInit {
     if(!this.squares[idx] && !this.winner) {
       this.squares.splice(idx, 1, this.player);
       this.xIsNext = !this.xIsNext;
-      setTimeout(() => {
-        this.makeAutoMove();
+      if(this.playerMode==='1') {
+        setTimeout(() => {
+          this.makeAutoMove();
+          this.winner = this.calculateWinner();
+        }, 200);
+      } else {
+        this.loader = false;
         this.winner = this.calculateWinner();
-      }, 200);
+      }
     } else {
       this.loader = false;
     }
